@@ -6,30 +6,23 @@ using System.Threading.Tasks;
 
 namespace ProcesarExcepciones
 {
-    public enum TipoRespuesta
-    {
-        Ok,
-        ErrorDevice,
-        ErrorPrinting
-    }
 
     public class Impresora
     {
-        public TipoRespuesta Open()
+        public void Open()
         {
-            return TipoRespuesta.Ok;
+            // .....
         }
 
-        public TipoRespuesta Print(string texto)
+        public void Print(string texto)
         {
-            System.Console.WriteLine(texto);
-            //return TipoRespuesta.ErrorPrinting;
-            return TipoRespuesta.Ok;
+            //System.Console.WriteLine(texto);
+            throw new ErrorImprimimiendoException("Error al imprimir");
         }
 
-        public TipoRespuesta Close()
+        public void Close()
         {
-            return TipoRespuesta.Ok;
+            // ...
         }
     }
 }
