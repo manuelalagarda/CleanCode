@@ -23,6 +23,16 @@ namespace LeyDemeter
             asignaturas.Add(asignatura);
         }
 
+        public Profesor GetCoordinadorAsignatura(int identificadorAsignatura)
+        {
+            Profesor profesor;
+
+            profesor = GetAsignatura(identificadorAsignatura).Coordinador;
+
+            return profesor;
+
+        }
+
         public Asignatura GetAsignatura(int identificador)
         {
             return asignaturas

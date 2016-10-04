@@ -14,6 +14,15 @@ namespace LeyDemeter
         }
 
         public string Nombre { get; private set; }
+
+        public Profesor GetCoordinadorAsignatura(int identificadorDepartamento, int identificadorAsignatura)
+        {
+            Departamento departamento;
+            departamento = GetDepartamento(identificadorDepartamento);
+
+            return departamento.GetCoordinadorAsignatura(identificadorAsignatura);
+        }
+
         private IList<Departamento> departamentos;
 
         public void AddDepartamento(Departamento departamento)
